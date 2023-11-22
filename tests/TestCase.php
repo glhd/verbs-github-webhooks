@@ -1,8 +1,8 @@
 <?php
 
-namespace Glhd\LaravelPackageTemplate\Tests;
+namespace Glhd\VerbsGitHubWebhooks\Tests;
 
-use Glhd\LaravelPackageTemplate\Support\PackageServiceProvider;
+use Glhd\VerbsGitHubWebhooks\Support\PackageServiceProvider;
 use Illuminate\Container\Container;
 use Orchestra\Testbench\TestCase as Orchestra;
 

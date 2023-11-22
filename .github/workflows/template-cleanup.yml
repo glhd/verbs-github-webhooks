@@ -6,7 +6,7 @@ jobs:
   template-cleanup:
     name: Template Cleanup
     runs-on: ubuntu-latest
-    if: github.event.repository.name != 'laravel-package-template'
+    if: github.event.repository.name != 'verbs-github-webhooks'
     permissions:
       contents: write
     steps:
@@ -22,11 +22,11 @@ jobs:
           STUDLY="$(echo "$NAME" | awk '{split($0,a,"[_ -]"); for(i=1;i<=length(a);++i) printf "%s",(length(a[i]) > 0 ? toupper(substr(a[i],1,1)) tolower(substr(a[i],2)) : "")}')"
 
           # Replace placeholder names
-          find . -type f -not -name "template-cleanup.yml" -exec sed -i "s/laravel-package-template/$KEBAB/g" {} +
-          find . -type f -not -name "template-cleanup.yml" -exec sed -i "s/LaravelPackageTemplate/$STUDLY/g" {} +
+          find . -type f -not -name "template-cleanup.yml" -exec sed -i "s/verbs-github-webhooks/$KEBAB/g" {} +
+          find . -type f -not -name "template-cleanup.yml" -exec sed -i "s/VerbsGitHubWebhooks/$STUDLY/g" {} +
           
           # Rename files
-          mv .idea/laravel-package-template.iml .idea/$KEBAB.iml
+          mv .idea/verbs-github-webhooks.iml .idea/$KEBAB.iml
           mv config/config.php config/$KEBAB.php
 
           # Cleanup
